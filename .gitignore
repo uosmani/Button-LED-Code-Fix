@@ -1,41 +1,16 @@
-# Prerequisites
-*.d
+#define LED_PIN 8
+#define BUTTON_PIN 7
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+void setup() {
+  pinMode(LED_PIN, OUTPUT); 
+  pinMode(BUTTON_PIN, INPUT);
+}
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
-
-# debug information files
-*.dwo
+void loop() {
+  if (digitalRead(BUTTON_PIN) == HIGH)  { 
+    digitalWrite(LED_PIN, HIGH);  // <-- Fixed comma
+  }
+  else {
+    digitalWrite(LED_PIN, LOW);
+  }
+}
